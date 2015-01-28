@@ -1,4 +1,4 @@
-package staff;
+package staff.dto;
 
 import java.util.Date;
 
