@@ -10,6 +10,10 @@ public interface EmployeeService {
 
 	Employee getEmployeeById(int id);
 
-	void addEmployee(Employee employee);
+	void updateEmployee(Employee employee);
+
+	void hireEmployeeById(int id);
+
+	void fireEmployeeById(int id);
 
 }
