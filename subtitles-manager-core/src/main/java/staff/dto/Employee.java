@@ -15,7 +15,7 @@ public class Employee {
 	private boolean isHired;
 
 	public String toString() {
-		return "ID:" + id + " - " + firstName + "; " + lastName + " пошта: " + email + "; працює зараз:" + (isHired ? "так" : "ні");
+		return "ID: " + id + " - " + firstName + "; " + lastName + " РїРѕС€С‚Р°: " + email + "; Р·Р°СЂР°Р· РїСЂР°С†СЋС”: " + (isHired ? "С‚Р°Рє" : "РЅС–");
 	}
 
 	public int getId() {

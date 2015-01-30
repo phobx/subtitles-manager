@@ -6,6 +6,8 @@ import staff.dto.Employee;
 
 public interface EmployeeService {
 
+	List<Employee> getAllHiredEmployees();
+
 	List<Employee> getAllEmployees();
 
 	Employee getEmployeeById(int id);

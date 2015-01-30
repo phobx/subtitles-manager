@@ -8,6 +8,8 @@ public interface EmployeeDao {
 
 	List<Employee> getAllEmployees();
 
+	List<Employee> getAllHiredEmployees();
+
 	Employee getEmployeeById(int id);
 
 	void updateEmployee(Employee employee);

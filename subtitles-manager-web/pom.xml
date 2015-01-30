@@ -10,5 +10,7 @@
 	<artifactId>subtitles-manager-web</artifactId>
 	<packaging>war</packaging>
 	<version>${sm.version}</version>
+	
+	
 
 </project>
