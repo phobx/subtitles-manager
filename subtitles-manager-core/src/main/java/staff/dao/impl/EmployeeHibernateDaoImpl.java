@@ -2,6 +2,8 @@ package staff.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import staff.dao.EmployeeDao;
@@ -9,10 +11,14 @@ import staff.dto.Employee;
 
 public class EmployeeHibernateDaoImpl extends HibernateDaoSupport implements EmployeeDao {
 
+	public static final String ENTITY_EMPLOYEE = "Employee";
+
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		DetachedCriteria dc = DetachedCriteria.forEntityName(ENTITY_EMPLOYEE);
+		dc.add(Restrictions.eqOrIsNull("isVisible", true));
+		List<Employee> employees = (List) getHibernateTemplate().findByCriteria(dc);
+		return employees;
 	}
 
 	@Override

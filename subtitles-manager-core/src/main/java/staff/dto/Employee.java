@@ -13,9 +13,8 @@ public class Employee {
 	private String skype;
 	private String workingDirectory;
 	private Calendar birthDay;
-
-	// private boolean isHired;
-	// private boolean isVisible;
+	private boolean isHired;
+	private boolean isVisible;
 
 	public String toString() {
 		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay /* + "; зараз працює: " + (isHired ? "так" : "ні")*/;
@@ -92,13 +91,21 @@ public class Employee {
 	public void setBirthDay(Calendar birthDay) {
 		this.birthDay = birthDay;
 	}
-	/*
-	 * public boolean isHired() { return isHired; }
-	 * 
-	 * public void setHired(boolean isHired) { this.isHired = isHired; }
-	 * 
-	 * public boolean isVisible() { return isVisible; }
-	 * 
-	 * public void setVisible(boolean isVisible) { this.isVisible = isVisible; }
-	 */
+
+	public boolean isHired() {
+		return isHired;
+	}
+
+	public void setHired(boolean isHired) {
+		this.isHired = isHired;
+	}
+
+	public boolean isVisible() {
+		return isVisible;
+	}
+
+	public void setVisible(boolean isVisible) {
+		this.isVisible = isVisible;
+	}
+
 }
