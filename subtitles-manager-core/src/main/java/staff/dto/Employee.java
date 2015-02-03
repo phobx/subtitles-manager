@@ -1,6 +1,6 @@
 package staff.dto;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Employee {
 
@@ -8,14 +8,17 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private int title;
+	private String phoneNumbers;
 	private String email;
 	private String skype;
 	private String workingDirectory;
-	private Date birthDay;
-	private boolean isHired;
+	private Calendar birthDay;
+
+	// private boolean isHired;
+	// private boolean isVisible;
 
 	public String toString() {
-		return "ID: " + id + " - " + firstName + "; " + lastName + " пошта: " + email + "; зараз працює: " + (isHired ? "так" : "ні");
+		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay /* + "; зараз працює: " + (isHired ? "так" : "ні")*/;
 	}
 
 	public int getId() {
@@ -50,6 +53,14 @@ public class Employee {
 		this.title = title;
 	}
 
+	public String getPhoneNumbers() {
+		return phoneNumbers;
+	}
+
+	public void setPhoneNumbers(String phoneNumbers) {
+		this.phoneNumbers = phoneNumbers;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -74,20 +85,20 @@ public class Employee {
 		this.workingDirectory = workingDirectory;
 	}
 
-	public Date getBirthDay() {
+	public Calendar getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(Date birthDay) {
+	public void setBirthDay(Calendar birthDay) {
 		this.birthDay = birthDay;
 	}
-
-	public boolean isHired() {
-		return isHired;
-	}
-
-	public void setHired(boolean isHired) {
-		this.isHired = isHired;
-	}
-
+	/*
+	 * public boolean isHired() { return isHired; }
+	 * 
+	 * public void setHired(boolean isHired) { this.isHired = isHired; }
+	 * 
+	 * public boolean isVisible() { return isVisible; }
+	 * 
+	 * public void setVisible(boolean isVisible) { this.isVisible = isVisible; }
+	 */
 }

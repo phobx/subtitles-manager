@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import staff.dao.EmployeeDao;
 import staff.dto.Employee;
 
+@Deprecated
 public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 
 	@Override
@@ -26,7 +27,7 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 				employee.setFirstName(rs.getString("first_name"));
 				employee.setLastName(rs.getString("last_name"));
 				employee.setEmail(rs.getString("email"));
-				employee.setHired(rs.getInt("is_hired") != 0);
+				// employee.setHired(rs.getInt("is_hired") != 0);
 				list.add(employee);
 			}
 
@@ -72,7 +73,7 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 				employee.setFirstName(rs.getString("first_name"));
 				employee.setLastName(rs.getString("last_name"));
 				employee.setEmail(rs.getString("email"));
-				employee.setHired(rs.getInt("is_hired") != 0);
+				// employee.setHired(rs.getInt("is_hired") != 0);
 				list.add(employee);
 			}
 

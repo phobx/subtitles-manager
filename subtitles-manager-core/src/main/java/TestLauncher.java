@@ -9,7 +9,8 @@ public class TestLauncher {
 
 	public static void main(String[] args) {
 
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("app-ctx.xml");
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("hibernate-app-ctx.xml");
+		System.out.println("===========context read===========");
 		EmployeeService employeeService = (EmployeeService) ctx.getBean("employeeService");
 
 		List<Employee> staff = employeeService.getAllEmployees();

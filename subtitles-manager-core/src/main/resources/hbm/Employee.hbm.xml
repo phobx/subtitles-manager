@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="staff.dto.Employee" table="adaptation_employee"
+		entity-name="Employee">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="firstName" type="string" column="first_name" />
+		<property name="lastName" type="string" column="last_name" />
+		<property name="title" type="int" column="title" />
+		<property name="phoneNumbers" type="string" column="phone_numbers" />
+		<property name="email" type="string" column="email" />
+		<property name="skype" type="string" column="skype" />
+		<property name="workingDirectory" type="string" column="working_directory" />
+		<property name="birthDay" type="calendar" column="birthday" />
+		<!-- 
+		<property name="isHired" type="boolean" column="is_hired" />
+		<property name="isVisible" type="boolean" column="is_visible" />
+ -->
+	</class>
+</hibernate-mapping>
