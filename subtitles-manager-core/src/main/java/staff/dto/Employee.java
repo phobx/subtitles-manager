@@ -17,18 +17,8 @@ public class Employee {
 	private boolean visible;
 
 	public String toString() {
-		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay /*
-																											 * +
-																											 * "; зараз працює: "
-																											 * +
-																											 * (
-																											 * isHired
-																											 * ?
-																											 * "так"
-																											 * :
-																											 * "ні"
-																											 * )
-																											 */;
+		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay + "; зараз працює: " + (hired ? "так" : "ні");
+
 	}
 
 	public int getId() {

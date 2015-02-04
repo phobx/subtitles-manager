@@ -4,12 +4,10 @@
 	<parent>
 		<groupId>com.dsa</groupId>
 		<artifactId>subtitles-manager</artifactId>
-		<version>${sm.version}</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.dsa</groupId>
 	<artifactId>subtitles-manager-web</artifactId>
 	<packaging>war</packaging>
-	<version>${sm.version}</version>
 	
 	
 

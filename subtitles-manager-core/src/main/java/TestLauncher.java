@@ -18,11 +18,6 @@ public class TestLauncher {
 			System.out.println(e);
 		}
 
-		List<Employee> actualStaff = employeeService.getAllHiredEmployees();
-		for (Employee e : actualStaff) {
-			System.out.println(e);
-		}
-
 	}
 
 }

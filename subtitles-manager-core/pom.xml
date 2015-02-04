@@ -4,11 +4,9 @@
 	<parent>
 		<groupId>com.dsa</groupId>
 		<artifactId>subtitles-manager</artifactId>
-		<version>${sm.version}</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.dsa</groupId>
 	<artifactId>subtitles-manager-core</artifactId>
-	<version>${sm.version}</version>
 
 	<dependencies>
 		<dependency>
