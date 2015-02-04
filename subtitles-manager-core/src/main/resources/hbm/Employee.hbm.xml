@@ -16,8 +16,8 @@
 		<property name="skype" type="string" column="skype" />
 		<property name="workingDirectory" type="string" column="working_directory" />
 		<property name="birthDay" type="calendar" column="birthday" />
-		<property name="isHired" type="boolean" column="is_hired" />
-		<property name="isVisible" type="boolean" column="is_visible" />
+		<property name="hired" type="boolean" column="is_hired" />
+		<property name="visible" type="boolean" column="is_visible" />
 
 	</class>
 </hibernate-mapping>

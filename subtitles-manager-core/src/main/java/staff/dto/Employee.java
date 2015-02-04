@@ -13,11 +13,22 @@ public class Employee {
 	private String skype;
 	private String workingDirectory;
 	private Calendar birthDay;
-	private boolean isHired;
-	private boolean isVisible;
+	private boolean hired;
+	private boolean visible;
 
 	public String toString() {
-		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay /* + "; зараз працює: " + (isHired ? "так" : "ні")*/;
+		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay /*
+																											 * +
+																											 * "; зараз працює: "
+																											 * +
+																											 * (
+																											 * isHired
+																											 * ?
+																											 * "так"
+																											 * :
+																											 * "ні"
+																											 * )
+																											 */;
 	}
 
 	public int getId() {
@@ -93,19 +104,19 @@ public class Employee {
 	}
 
 	public boolean isHired() {
-		return isHired;
+		return hired;
 	}
 
-	public void setHired(boolean isHired) {
-		this.isHired = isHired;
+	public void setHired(boolean hired) {
+		this.hired = hired;
 	}
 
 	public boolean isVisible() {
-		return isVisible;
+		return visible;
 	}
 
-	public void setVisible(boolean isVisible) {
-		this.isVisible = isVisible;
+	public void setVisible(boolean visible) {
+		this.visible = visible;
 	}
 
 }
