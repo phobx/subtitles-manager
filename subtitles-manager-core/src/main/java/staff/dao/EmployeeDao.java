@@ -18,4 +18,6 @@ public interface EmployeeDao {
 
 	void fireEmployeeById(int id);
 
+	void deleteEmployeeById(int id);
+
 }

@@ -13,6 +13,7 @@ import staff.dao.EmployeeDao;
 import staff.dto.Employee;
 
 @Deprecated
+// and not fully implemented
 public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 
 	@Override
@@ -81,6 +82,12 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public void deleteEmployeeById(int id) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

@@ -18,4 +18,6 @@ public interface EmployeeService {
 
 	void fireEmployeeById(int id);
 
+	void deleteEmployeeById(int id);
+
 }

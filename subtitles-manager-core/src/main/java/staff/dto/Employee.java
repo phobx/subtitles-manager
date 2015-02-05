@@ -5,19 +5,20 @@ import java.util.Calendar;
 public class Employee {
 
 	private int id;
-	private String firstName;
-	private String lastName;
-	private int title;
-	private String phoneNumbers;
-	private String email;
-	private String skype;
-	private String workingDirectory;
-	private Calendar birthDay;
-	private boolean hired;
-	private boolean visible;
+	private String firstName = "";
+	private String lastName = "";
+	private int title = 0;
+	private String phoneNumbers = "";
+	private String email = "";
+	private String skype = "";
+	private String workingDirectory = "";
+	private Calendar birthDay = Calendar.getInstance();
+	private boolean hired = false;
+	private boolean visible = true;
 
+	@Override
 	public String toString() {
-		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; ДР: " + birthDay + "; зараз працює: " + (hired ? "так" : "ні");
+		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; зараз працює: " + (hired ? "так" : "ні");
 
 	}
 
