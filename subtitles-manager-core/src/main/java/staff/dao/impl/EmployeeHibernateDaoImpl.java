@@ -4,21 +4,26 @@ import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.HibernateTemplate;
 
 import staff.dao.EmployeeDao;
 import staff.dto.Employee;
 
-public class EmployeeHibernateDaoImpl extends HibernateDaoSupport implements EmployeeDao {
+public class EmployeeHibernateDaoImpl implements EmployeeDao {
 
 	public static final String ENTITY_EMPLOYEE = "Employee";
+	private HibernateTemplate hibernateTemplate;
+
+	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Employee> getAllEmployees() {
 		DetachedCriteria dc = DetachedCriteria.forEntityName(ENTITY_EMPLOYEE);
 		dc.add(Restrictions.eqOrIsNull("visible", true));
-		List<Employee> employees = (List<Employee>) getHibernateTemplate().findByCriteria(dc);
+		List<Employee> employees = (List<Employee>) hibernateTemplate.findByCriteria(dc);
 		return employees;
 	}
 
@@ -27,13 +32,13 @@ public class EmployeeHibernateDaoImpl extends HibernateDaoSupport implements Emp
 	public List<Employee> getAllHiredEmployees() {
 		DetachedCriteria dc = DetachedCriteria.forEntityName(ENTITY_EMPLOYEE);
 		dc.add(Restrictions.eqOrIsNull("visible", true)).add(Restrictions.eqOrIsNull("hired", true));
-		List<Employee> employees = (List<Employee>) getHibernateTemplate().findByCriteria(dc);
+		List<Employee> employees = (List<Employee>) hibernateTemplate.findByCriteria(dc);
 		return employees;
 	}
 
 	@Override
 	public Employee getEmployeeById(int id) {
-		Employee employee = (Employee) getHibernateTemplate().get(ENTITY_EMPLOYEE, id);
+		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
 		if (employee == null) {
 			return null;
 		}
@@ -42,29 +47,29 @@ public class EmployeeHibernateDaoImpl extends HibernateDaoSupport implements Emp
 
 	@Override
 	public void updateEmployee(Employee employee) {
-		getHibernateTemplate().saveOrUpdate(ENTITY_EMPLOYEE, employee);
+		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
 
 	}
 
 	@Override
 	public void hireEmployeeById(int id) {
-		Employee employee = (Employee) getHibernateTemplate().get(ENTITY_EMPLOYEE, id);
+		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
 		employee.setHired(true);
-		getHibernateTemplate().saveOrUpdate(ENTITY_EMPLOYEE, employee);
+		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
 	}
 
 	@Override
 	public void fireEmployeeById(int id) {
-		Employee employee = (Employee) getHibernateTemplate().get(ENTITY_EMPLOYEE, id);
+		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
 		employee.setHired(false);
-		getHibernateTemplate().saveOrUpdate(ENTITY_EMPLOYEE, employee);
+		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
 	}
 
 	@Override
 	public void deleteEmployeeById(int id) {
-		Employee employee = (Employee) getHibernateTemplate().get(ENTITY_EMPLOYEE, id);
+		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
 		employee.setVisible(false);
-		getHibernateTemplate().saveOrUpdate(ENTITY_EMPLOYEE, employee);
+		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
 
 	}
 
