@@ -51,18 +51,6 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 	}
 
 	@Override
-	public void hireEmployeeById(int id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void fireEmployeeById(int id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public List<Employee> getAllHiredEmployees() {
 		List<Employee> list = new ArrayList<Employee>();
 		try (Connection connection = getConnection()) {
@@ -85,7 +73,7 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 	}
 
 	@Override
-	public void deleteEmployeeById(int id) {
+	public void realDeleteEmployeeById(int id) {
 		// TODO Auto-generated method stub
 
 	}

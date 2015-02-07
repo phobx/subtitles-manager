@@ -52,24 +52,9 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public void hireEmployeeById(int id) {
+	public void realDeleteEmployeeById(int id) {
 		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
-		employee.setHired(true);
-		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
-	}
-
-	@Override
-	public void fireEmployeeById(int id) {
-		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
-		employee.setHired(false);
-		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
-	}
-
-	@Override
-	public void deleteEmployeeById(int id) {
-		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
-		employee.setVisible(false);
-		hibernateTemplate.saveOrUpdate(ENTITY_EMPLOYEE, employee);
+		hibernateTemplate.delete(ENTITY_EMPLOYEE, employee);
 
 	}
 

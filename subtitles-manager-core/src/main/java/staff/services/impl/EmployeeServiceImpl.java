@@ -34,25 +34,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void hireEmployeeById(int id) {
-		employeeDao.hireEmployeeById(id);
-	}
-
-	@Override
-	public void fireEmployeeById(int id) {
-		employeeDao.fireEmployeeById(id);
-
-	}
-
-	@Override
 	public List<Employee> getAllHiredEmployees() {
 		return employeeDao.getAllHiredEmployees();
 	}
 
 	@Override
+	// weak delete
 	public void deleteEmployeeById(int id) {
-		employeeDao.deleteEmployeeById(id);
-
+		Employee employee = employeeDao.getEmployeeById(id);
+		employee.setVisible(false);
+		employeeDao.updateEmployee(employee);
 	}
 
 }

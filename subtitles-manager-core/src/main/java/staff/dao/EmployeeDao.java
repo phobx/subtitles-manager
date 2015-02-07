@@ -14,10 +14,6 @@ public interface EmployeeDao {
 
 	void updateEmployee(Employee employee);
 
-	void hireEmployeeById(int id);
-
-	void fireEmployeeById(int id);
-
-	void deleteEmployeeById(int id);
+	void realDeleteEmployeeById(int id);
 
 }

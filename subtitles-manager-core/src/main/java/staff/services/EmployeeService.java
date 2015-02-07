@@ -14,10 +14,6 @@ public interface EmployeeService {
 
 	void updateEmployee(Employee employee);
 
-	void hireEmployeeById(int id);
-
-	void fireEmployeeById(int id);
-
 	void deleteEmployeeById(int id);
 
 }
