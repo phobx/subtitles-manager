@@ -42,7 +42,7 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 		if (employee == null) {
 			return null;
 		}
-		return (employee.isVisible() ? employee : null);
+		return (employee.getVisible() ? employee : null);
 	}
 
 	@Override

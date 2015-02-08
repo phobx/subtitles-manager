@@ -10,12 +10,13 @@
 		</id>
 		<property name="firstName" type="string" column="first_name" />
 		<property name="lastName" type="string" column="last_name" />
-		<property name="title" type="int" column="title" />
+		<property name="title" type="string" column="title" />
 		<property name="phoneNumbers" type="string" column="phone_numbers" />
 		<property name="email" type="string" column="email" />
 		<property name="skype" type="string" column="skype" />
 		<property name="workingDirectory" type="string" column="working_directory" />
-		<property name="birthDay" type="calendar" column="birthday" />
+		<property name="birthDay" type="long" column="birthday" />
+		<property name="inStaff" type="boolean" column="instaff"/>
 		<property name="hired" type="boolean" column="hired" />
 		<property name="visible" type="boolean" column="visible" />
 

@@ -24,18 +24,19 @@ DROP TABLE IF EXISTS `adaptation_employee`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `adaptation_employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `title` int(11) NOT NULL,
-  `phone_numbers` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `skype` varchar(255) NOT NULL,
-  `working_directory` varchar(255) NOT NULL,
-  `birthday` datetime NOT NULL,
-  `hired` bit(1) NOT NULL,
-  `visible` bit(1) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `phone_numbers` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `skype` varchar(255) DEFAULT NULL,
+  `working_directory` varchar(255) DEFAULT NULL,
+  `birthday` bigint(20) DEFAULT NULL,
+  `hired` bit(1) DEFAULT NULL,
+  `visible` bit(1) DEFAULT NULL,
+  `instaff` bit(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +45,7 @@ CREATE TABLE `adaptation_employee` (
 
 LOCK TABLES `adaptation_employee` WRITE;
 /*!40000 ALTER TABLE `adaptation_employee` DISABLE KEYS */;
-INSERT INTO `adaptation_employee` VALUES (1,'Ім\'я','Прізвище',1,'','www','','','1000-00-00 00:00:00','',''),(2,'Ім\'я1','Прізвище1',4,'','qqq','','','2000-00-00 00:00:00','\0',''),(3,'Ім\'я3','Прізвище3',0,'','ww@qq','','','2000-00-00 00:00:00','','\0'),(4,'Ім\'я5','Прізвище6',0,'','','','','2000-00-00 00:00:00','\0','');
+INSERT INTO `adaptation_employee` VALUES (1,'Ім\'я10','Прізвище10','0','','mail','','',2015,'','',''),(2,'Ім\'я1','Прізвище1','4','','qqq','','',0,'\0','',''),(3,'Ім\'я3','Прізвище3','0','','ww@qq','','',0,'','\0',''),(4,'Ім\'я5','Прізвище6','0','','','','',0,'','','\0'),(5,'Іван','Сидоров','0','','ivan@smith','','',2015,'','\0',''),(6,'Ім\'я','Прізвище','0','','random','','',2015,'','','\0'),(7,'Ім\'я10','Прізвище10','0','','mail','','',2015,'','',''),(8,'Один','Два',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `adaptation_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-02-04 18:02:41
+-- Dump completed on 2015-02-08 17:24:11

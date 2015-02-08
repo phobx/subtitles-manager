@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	// weak delete
 	public void deleteEmployeeById(int id) {
 		Employee employee = employeeDao.getEmployeeById(id);
-		employee.setVisible(false);
+		employee.setVisible(Boolean.FALSE);
 		employeeDao.updateEmployee(employee);
 	}
 

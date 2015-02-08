@@ -1,20 +1,19 @@
 package staff.dto;
 
-import java.util.Calendar;
-
 public class Employee {
 
 	private int id;
 	private String firstName = "";
 	private String lastName = "";
-	private int title = 0;
+	private String title = "";
 	private String phoneNumbers = "";
 	private String email = "";
 	private String skype = "";
 	private String workingDirectory = "";
-	private Calendar birthDay = Calendar.getInstance();
-	private boolean hired = false;
-	private boolean visible = true;
+	private Long birthDay = 0L;
+	private Boolean inStaff = false;
+	private Boolean hired = false;
+	private Boolean visible = true;
 
 	@Override
 	public String toString() {
@@ -46,11 +45,11 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public int getTitle() {
+	public String getTitle() {
 		return title;
 	}
 
-	public void setTitle(int title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
@@ -86,27 +85,35 @@ public class Employee {
 		this.workingDirectory = workingDirectory;
 	}
 
-	public Calendar getBirthDay() {
+	public Long getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(Calendar birthDay) {
+	public void setBirthDay(Long birthDay) {
 		this.birthDay = birthDay;
 	}
 
-	public boolean isHired() {
+	public Boolean getInStaff() {
+		return inStaff;
+	}
+
+	public void setInStaff(Boolean inStaff) {
+		this.inStaff = inStaff;
+	}
+
+	public Boolean getHired() {
 		return hired;
 	}
 
-	public void setHired(boolean hired) {
+	public void setHired(Boolean hired) {
 		this.hired = hired;
 	}
 
-	public boolean isVisible() {
+	public Boolean getVisible() {
 		return visible;
 	}
 
-	public void setVisible(boolean visible) {
+	public void setVisible(Boolean visible) {
 		this.visible = visible;
 	}
 
