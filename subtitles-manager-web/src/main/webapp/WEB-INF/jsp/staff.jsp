@@ -3,6 +3,8 @@
 	pageEncoding="UTF-8"%>
 <%@page import="staff.dto.Employee" %>
 <%@page import="java.util.List" %>
+<%@page import="java.util.Date" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,7 @@
 				<td><%=e.getFirstName() + " " +e.getLastName()%></td>
 				<td><%=e.getTitle() %></td>
 				<td><%=e.getEmail() %></td>
-				<td><%="NaN" %></td>
+				<td><%= (e.getBirthDay()==null) ? "NaN" : e.getBirthDay() %></td>
 			</tr>
 			<%
 				}
