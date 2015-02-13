@@ -3,17 +3,17 @@ package staff.dto;
 public class Employee {
 
 	private int id;
-	private String firstName = "";
-	private String lastName = "";
-	private String title = "";
-	private String phoneNumbers = "";
-	private String email = "";
-	private String skype = "";
-	private String workingDirectory = "";
-	private Long birthDay = 0L;
-	private Boolean inStaff = false;
-	private Boolean hired = false;
-	private Boolean visible = true;
+	private String firstName;
+	private String lastName;
+	private String title;
+	private String phoneNumbers;
+	private String email;
+	private String skype;
+	private String workingDirectory;
+	private Long birthDay;
+	private Boolean inStaff;
+	private Boolean hired;
+	private Boolean visible;
 
 	@Override
 	public String toString() {

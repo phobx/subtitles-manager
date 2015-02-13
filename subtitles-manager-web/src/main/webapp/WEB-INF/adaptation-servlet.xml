@@ -10,6 +10,16 @@
 		<property name="employeeService" ref="employeeService" />
 	</bean>
 
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<constructor-arg>
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper"></bean>
+				</constructor-arg>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
