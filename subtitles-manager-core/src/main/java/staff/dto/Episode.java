@@ -3,12 +3,16 @@ package staff.dto;
 public class Episode {
 
 	private int id;
-	private Series seriesId;
-	private Integer seriesNumber;
+	private Series series;
+	private Integer episodeNumber;
 	private Integer timing;
 	private String type;
-	private Employee confirmedBy;
+	private Long requestDate;
+	private Long demandDate;
+	private Long airDate;
 	private Long confirmDate;
-	private Long aitDate;
+	private Employee confirmedBy;
+	private String ardomeLocation;
+	private String notes;
 
 }
