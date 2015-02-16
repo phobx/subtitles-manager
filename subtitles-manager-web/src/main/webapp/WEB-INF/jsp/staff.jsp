@@ -15,6 +15,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <link href="resources/bootstrap.css" rel="stylesheet" />
+<script src="resources/scripts.js"></script>
 
 <% List<Employee> staff = (List<Employee>) request.getAttribute("staff"); %>
 
@@ -44,6 +45,8 @@
 				<td><%=e.getTitle() %></td>
 				<td><%=e.getEmail() %></td>
 				<td><%= (e.getBirthDay()==null) ? "NaN" : e.getBirthDay() %></td>
+				<td><button class="btn btn-primary" onclick="edit()">Редагувати</button></td>
+				<td><button class="btn btn-danger" onclick="del()">Видалити</button></td>
 			</tr>
 			<%
 				}
