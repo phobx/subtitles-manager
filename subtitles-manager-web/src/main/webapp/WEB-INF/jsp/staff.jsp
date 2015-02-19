@@ -16,6 +16,7 @@
 
 <link href="resources/bootstrap.css" rel="stylesheet" />
 <script src="resources/scripts.js"></script>
+<script src="resources/jquery-2.1.3.js"></script>
 
 <% List<Employee> staff = (List<Employee>) request.getAttribute("staff"); %>
 
@@ -45,8 +46,8 @@
 				<td><%=e.getTitle() %></td>
 				<td><%=e.getEmail() %></td>
 				<td><%= (e.getBirthDay()==null) ? "NaN" : e.getBirthDay() %></td>
-				<td><button class="btn btn-primary" onclick="edit()">Редагувати</button></td>
-				<td><button class="btn btn-danger" onclick="del()">Видалити</button></td>
+				<td><button class="btn btn-primary" onclick="edit(<%=e.getId()%>)">Редагувати</button></td>
+				<td><button class="btn btn-danger" onclick="del(<%=e.getId()%>)">Видалити</button></td>
 			</tr>
 			<%
 				}

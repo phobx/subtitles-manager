@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,10 @@ public class StaffController {
 
 	private EmployeeService employeeService;
 
+	public StaffController() {
+		// log
+	}
+
 	public void setEmployeeService(EmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
@@ -34,7 +39,22 @@ public class StaffController {
 		return mv;
 	}
 
-	@RequestMapping(value = "about.do", method = RequestMethod.GET)
+	@RequestMapping(value = "delete-employee.do", method = RequestMethod.POST, consumes = { MediaType.TEXT_PLAIN_VALUE })
+	@ResponseStatus(HttpStatus.OK)
+	public void deleteEmployee(@RequestBody String body) {
+		System.out.println(body);
+		if (body.startsWith("delete-employee=")) {
+			String s = body.substring(16);
+			System.out.println(s);
+			try {
+				int id = Integer.parseUnsignedInt(s);
+				employeeService.deleteEmployeeById(id);
+			} catch (NumberFormatException nfe) {
+			}
+		}
+	}
+
+	@RequestMapping(value = "about", method = RequestMethod.GET)
 	@ResponseBody
 	public List<String> showAbout(@RequestParam(required = false, value = "name") String name) {
 		List<String> result = new ArrayList<>();
@@ -45,7 +65,7 @@ public class StaffController {
 		return result;
 	}
 
-	@RequestMapping(value = "about.do", method = RequestMethod.POST)
+	@RequestMapping(value = "about", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	public void showAbout1(@RequestBody List<String> body) {
 		for (String a : body) {
@@ -53,7 +73,7 @@ public class StaffController {
 		}
 	}
 
-	@RequestMapping(value = "test.do", method = RequestMethod.GET)
+	@RequestMapping(value = "test", method = RequestMethod.GET)
 	@ResponseBody
 	public Employee testEdit(@RequestParam(required = true, value = "id") int id) {
 		return employeeService.getEmployeeById(id);
