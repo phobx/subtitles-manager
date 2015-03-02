@@ -1,3 +1,7 @@
+function add() {
+	alert("Here you add an employee.");
+}
+
 function edit(n) {
 	alert("Here you edit " + n + "th employee.");
 }

@@ -24,7 +24,7 @@
 </head>
 
 <body class="container">
-	<h4>Працівники відділу адаптції</h4>
+	<h4>Працівники відділу адаптції</h4> <button class="btn btn-primary" onclick="add()">Додати</button>
 	<table class="table">
 		<thead>
 			<tr>
