@@ -1,10 +1,10 @@
-package staff;
+package adapt;
 
 import junit.framework.TestCase;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import staff.services.EmployeeService;
+import adapt.services.EmployeeService;
 
 public class TestEmployee extends TestCase {
 

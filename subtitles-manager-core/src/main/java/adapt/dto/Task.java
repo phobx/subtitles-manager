@@ -1,4 +1,4 @@
-package staff.dto;
+package adapt.dto;
 
 public class Task {
 

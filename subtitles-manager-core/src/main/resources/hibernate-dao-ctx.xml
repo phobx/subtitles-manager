@@ -41,7 +41,7 @@
 
 	<tx:annotation-driven transaction-manager="txManager" />
 
-	<bean name="employeeDao" class="staff.dao.impl.EmployeeHibernateDaoImpl">
+	<bean name="employeeDao" class="adapt.dao.impl.EmployeeHibernateDaoImpl">
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
 

@@ -1,4 +1,4 @@
-package staff.dto;
+package adapt.dto;
 
 public class Employee {
 
@@ -13,11 +13,10 @@ public class Employee {
 	private Long birthDay;
 	private Boolean inStaff;
 	private Boolean hired;
-	private Boolean visible;
 
 	@Override
 	public String toString() {
-		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; зараз працює: " + (hired ? "так" : "ні");
+		return "ID: " + id + " - " + firstName + " " + lastName + "; пошта: " + email + "; зараз працює: " + ((hired != null) ? (hired ? "так" : "ні") : "немає даних");
 
 	}
 
@@ -107,14 +106,6 @@ public class Employee {
 
 	public void setHired(Boolean hired) {
 		this.hired = hired;
-	}
-
-	public Boolean getVisible() {
-		return visible;
-	}
-
-	public void setVisible(Boolean visible) {
-		this.visible = visible;
 	}
 
 }

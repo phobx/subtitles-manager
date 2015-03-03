@@ -1,12 +1,12 @@
-package staff.services.impl;
+package adapt.services.impl;
 
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import staff.dao.EmployeeDao;
-import staff.dto.Employee;
-import staff.services.EmployeeService;
+import adapt.dao.EmployeeDao;
+import adapt.dto.Employee;
+import adapt.services.EmployeeService;
 
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService {
@@ -41,9 +41,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	// weak delete
 	public void deleteEmployeeById(int id) {
-		Employee employee = employeeDao.getEmployeeById(id);
-		employee.setVisible(Boolean.FALSE);
-		employeeDao.updateEmployee(employee);
+		employeeDao.deleteEmployeeById(id);
 	}
 
 }

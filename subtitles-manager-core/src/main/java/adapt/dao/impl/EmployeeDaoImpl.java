@@ -1,4 +1,4 @@
-package staff.dao.impl;
+package adapt.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.List;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-import staff.dao.EmployeeDao;
-import staff.dto.Employee;
+import adapt.dao.EmployeeDao;
+import adapt.dto.Employee;
 
 @Deprecated
 // and not fully implemented
@@ -73,7 +73,7 @@ public class EmployeeDaoImpl extends JdbcDaoSupport implements EmployeeDao {
 	}
 
 	@Override
-	public void realDeleteEmployeeById(int id) {
+	public void deleteEmployeeById(int id) {
 		// TODO Auto-generated method stub
 
 	}

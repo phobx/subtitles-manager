@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="adapt.dto.Episode" table="adaptation_series"
+		entity-name="Episode">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<!-- series_id -->
+		<property name="episodeNumber" type="integer" column="episode_number" />
+		<property name="timing" type="integer" column="timing" />
+		<property name="channel" type="string" column="channel" />
+		<property name="requestDate" type="long" column="request_date" />
+		<property name="demandDate" type="long" column="demand_date" />
+		<property name="airDate" type="long" column="air_date" />
+		<property name="confirmDate" type="long" column="confirm_date" />
+		<!-- confirmed_by -->
+		<property name="ardomeName" type="string" column="ardome_name" />
+		<property name="notes" type="string" column="notes" />
+
+	</class>
+</hibernate-mapping>

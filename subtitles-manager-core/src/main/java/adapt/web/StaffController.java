@@ -1,4 +1,4 @@
-package staff.web;
+package adapt.web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import staff.dto.Employee;
-import staff.services.EmployeeService;
+import adapt.dto.Employee;
+import adapt.services.EmployeeService;
 
 @Controller
 public class StaffController {

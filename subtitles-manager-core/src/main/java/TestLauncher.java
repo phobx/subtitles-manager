@@ -1,6 +1,9 @@
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import staff.services.EmployeeService;
+import adapt.dto.Employee;
+import adapt.services.EmployeeService;
 
 public class TestLauncher {
 
@@ -9,10 +12,12 @@ public class TestLauncher {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("hibernate-app-ctx.xml");
 		EmployeeService employeeService = (EmployeeService) ctx.getBean("employeeService");
 
-		employeeService.deleteEmployeeById(5);
+		// employeeService.deleteEmployeeById(5);
 
-		for (int i = 1; i < 11; i++) {
-			System.out.println(i + " : " + employeeService.getEmployeeById(i));
+		List<Employee> staff = employeeService.getAllEmployees();
+
+		for (Employee e : staff) {
+			System.out.println(e);
 		}
 
 	}

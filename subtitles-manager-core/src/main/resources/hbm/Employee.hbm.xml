@@ -2,8 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="staff.dto.Employee" table="adaptation_employee"
-		entity-name="Employee">
+	<class name="adapt.dto.Employee" table="adaptation_employee" entity-name="Employee">
 		<id name="id" type="int">
 			<column name="id" />
 			<generator class="identity" />
@@ -18,7 +17,6 @@
 		<property name="birthDay" type="long" column="birthday" />
 		<property name="inStaff" type="boolean" column="instaff"/>
 		<property name="hired" type="boolean" column="hired" />
-		<property name="visible" type="boolean" column="visible" />
 
 	</class>
 </hibernate-mapping>

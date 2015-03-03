@@ -1,7 +1,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="staff.dto.Employee" %>
+<%@page import="adapt.dto.Employee" %>
 <%@page import="java.util.List" %>
 <%@page import="java.util.Date" %>
 
@@ -45,7 +45,7 @@
 				<td><%=e.getFirstName() + " " +e.getLastName()%></td>
 				<td><%=e.getTitle() %></td>
 				<td><%=e.getEmail() %></td>
-				<td><%= (e.getBirthDay()==null) ? "NaN" : e.getBirthDay() %></td>
+				<td><%= (e.getBirthDay()==null) ? "Немає даних" : new Date(e.getBirthDay()) %></td>
 				<td><button class="btn btn-primary" onclick="edit(<%=e.getId()%>)">Редагувати</button></td>
 				<td><button class="btn btn-danger" onclick="del(<%=e.getId()%>)">Видалити</button></td>
 			</tr>

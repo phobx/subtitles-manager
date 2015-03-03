@@ -1,8 +1,8 @@
-package staff.dao;
+package adapt.dao;
 
 import java.util.List;
 
-import staff.dto.Employee;
+import adapt.dto.Employee;
 
 public interface EmployeeDao {
 
@@ -14,6 +14,6 @@ public interface EmployeeDao {
 
 	void updateEmployee(Employee employee);
 
-	void realDeleteEmployeeById(int id);
+	void deleteEmployeeById(int id);
 
 }

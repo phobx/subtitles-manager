@@ -1,8 +1,8 @@
-package staff.services;
+package adapt.services;
 
 import java.util.List;
 
-import staff.dto.Employee;
+import adapt.dto.Employee;
 
 public interface EmployeeService {
 

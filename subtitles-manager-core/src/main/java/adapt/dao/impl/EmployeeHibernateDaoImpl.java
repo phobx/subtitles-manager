@@ -1,4 +1,4 @@
-package staff.dao.impl;
+package adapt.dao.impl;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
-import staff.dao.EmployeeDao;
-import staff.dto.Employee;
+import adapt.dao.EmployeeDao;
+import adapt.dto.Employee;
 
 public class EmployeeHibernateDaoImpl implements EmployeeDao {
 
@@ -22,7 +22,6 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 	@Override
 	public List<Employee> getAllEmployees() {
 		DetachedCriteria dc = DetachedCriteria.forEntityName(ENTITY_EMPLOYEE);
-		dc.add(Restrictions.eqOrIsNull("visible", true));
 		List<Employee> employees = (List<Employee>) hibernateTemplate.findByCriteria(dc);
 		return employees;
 	}
@@ -31,7 +30,7 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 	@Override
 	public List<Employee> getAllHiredEmployees() {
 		DetachedCriteria dc = DetachedCriteria.forEntityName(ENTITY_EMPLOYEE);
-		dc.add(Restrictions.eqOrIsNull("visible", true)).add(Restrictions.eqOrIsNull("hired", true));
+		dc.add(Restrictions.eqOrIsNull("hired", true));
 		List<Employee> employees = (List<Employee>) hibernateTemplate.findByCriteria(dc);
 		return employees;
 	}
@@ -39,10 +38,7 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 	@Override
 	public Employee getEmployeeById(int id) {
 		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
-		if (employee == null) {
-			return null;
-		}
-		return (employee.getVisible() ? employee : null);
+		return employee;
 	}
 
 	@Override
@@ -52,7 +48,7 @@ public class EmployeeHibernateDaoImpl implements EmployeeDao {
 	}
 
 	@Override
-	public void realDeleteEmployeeById(int id) {
+	public void deleteEmployeeById(int id) {
 		Employee employee = (Employee) hibernateTemplate.get(ENTITY_EMPLOYEE, id);
 		hibernateTemplate.delete(ENTITY_EMPLOYEE, employee);
 
