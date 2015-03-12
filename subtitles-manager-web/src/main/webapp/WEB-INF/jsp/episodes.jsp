@@ -12,23 +12,10 @@
 
 <link href="resources/bootstrap.css" rel="stylesheet" />
 
-<title>INDEX</title>
+<title>Фільми</title>
 </head>
+
 <body class="container">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">INDEX</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="staff.do">Staff</a></li>
-        <li><a href="episodes.do">Episodes</a></li> 
-        <li><a href="tasks.do">Tasks</a></li> 
-      </ul>
-    </div>
-  </div>
-</nav>
+	<h4>Фільми</h4> 
 </body>
 </html>
