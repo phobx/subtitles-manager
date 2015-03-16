@@ -26,6 +26,7 @@
         <li><a href="staff.do">Staff</a></li>
         <li><a href="episodes.do">Episodes</a></li> 
         <li><a href="tasks.do">Tasks</a></li> 
+        <li><a href="series.do">Series</a></li> 
       </ul>
     </div>
   </div>

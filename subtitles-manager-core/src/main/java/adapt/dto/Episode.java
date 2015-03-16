@@ -5,7 +5,7 @@ public class Episode {
 	private int id;
 	private Series series;
 	private Integer episodeNumber;
-	private Integer timing;
+	private Integer timing; // in seconds
 	private String channel;
 	private Long requestDate;
 	private Long demandDate;
